@@ -1,4 +1,4 @@
-import {Lead} from "@/features/lead-capture/types/lead.types";
+import {Lead} from "@/application/features/lead-capture/types/lead.types";
 
 export class LeadEntity {
     private lead: Lead;
