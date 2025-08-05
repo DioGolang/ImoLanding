@@ -5,32 +5,63 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { LeadSchema, LeadFormData } from '../schemas/lead.schema';
 import { useLeadCapture } from '../hooks/useLeadCapture';
 
-export const LeadCaptureForm = () => {
-    const { register, handleSubmit, formState: { errors } } = useForm<LeadFormData>({
+import { Button } from '@/ui/components/landing-page/shared/Button';
+import { Input } from '@/ui/components/landing-page/shared/Input';
+import { Label } from '@/ui/components/landing-page/shared/Label';
+
+interface LeadCaptureFormProps {
+    buttonText: string;
+}
+
+export function LeadCaptureForm({ buttonText }: LeadCaptureFormProps) {
+    const { createLead, isPending, isSuccess, isError } = useLeadCapture();
+
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+        reset,
+    } = useForm<LeadFormData>({
         resolver: zodResolver(LeadSchema),
     });
 
-    const { submitLead, isLoading, isSuccess } = useLeadCapture();
-
     const onSubmit = (data: LeadFormData) => {
-        submitLead(data);
+        createLead(data, {
+            onSuccess: () => {
+                reset();
+            },
+        });
     };
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-            <input {...register('name')} placeholder="Name" />
-            {errors.name && <span>{errors.name.message}</span>}
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 w-full">
+            <div className="space-y-2">
+                <Label htmlFor="name">Nome</Label>
+                <Input
+                    id="name"
+                    placeholder="Seu nome completo"
+                    {...register('name')}
+                />
+                {errors.name && <p className="text-sm text-red-500">{errors.name.message}</p>}
+            </div>
 
-            <input {...register('email')} placeholder="Email" />
-            {errors.email && <span>{errors.email.message}</span>}
+            <div className="space-y-2">
+                <Label htmlFor="email">E-mail</Label>
+                <Input
+                    id="email"
+                    type="email"
+                    placeholder="seu@email.com"
+                    {...register('email')}
+                />
+                {errors.email && <p className="text-sm text-red-500">{errors.email.message}</p>}
+            </div>
 
-            <input {...register('phone')} placeholder="Phone (optional)" />
+            <Button type="submit" disabled={isPending} className="w-full">
+                {isPending ? 'Enviando...' : buttonText}
+            </Button>
 
-            <button type="submit" disabled={isLoading}>
-                {isLoading ? 'Submitting...' : 'Submit'}
-            </button>
-
-            {isSuccess && <p>Lead captured successfully!</p>}
+            {isSuccess && <p className="text-sm text-green-600">Lead capturado com sucesso!</p>}
+            {isError && <p className="text-sm text-red-500">Ocorreu um erro. Tente novamente.</p>}
         </form>
     );
-};
+}

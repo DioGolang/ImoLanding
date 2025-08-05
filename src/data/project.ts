@@ -80,7 +80,7 @@ export const database = {
                 'Lobby com pé-direito duplo',
             ],
             images: [
-                '/images/taj-residences/fachada-diurna.jpg',
+                '/images/taj-residences/tag-fachada-1.jpg',
                 '/images/taj-residences/fachada-noturna.jpg',
                 '/images/taj-residences/lobby.jpg',
                 '/images/taj-residences/piscina.jpg',

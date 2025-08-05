@@ -1,25 +1,46 @@
-import {Lead} from "@/application/features/lead-capture/types/lead.types";
+import {LeadDTO} from "@/application/features/lead-capture/types";
 
-export class LeadEntity {
-    private lead: Lead;
+interface LeadProps {
+    id: string;
+    name: string;
+    email: string;
+    phone?: string;
+    createdAt: Date;
+}
 
-    constructor(lead: Lead) {
-        this.lead = lead;
+export class Lead {
+    public readonly id: string;
+    public name: string;
+    public email: string;
+    public phone?: string;
+    public readonly createdAt: Date;
+
+    constructor(props: LeadProps) {
+        if (!props.email || !props.email.includes('@')) {
+            throw new Error("Lead must have a valid email.");
+        }
+        if (!props.name || props.name.trim().length < 2) {
+            throw new Error("Lead name must be at least 2 characters long.");
+        }
+
+        this.id = props.id;
+        this.name = props.name;
+        this.email = props.email;
+        this.phone = props.phone;
+        this.createdAt = props.createdAt;
     }
 
-    get name() {
-        return this.lead.name;
+    public updateName(newName: string): void {
+        if (newName.trim().length < 2) {
+            throw new Error("Name must be at least 2 characters long");
+        }
+        this.name = newName;
     }
 
-    get email() {
-        return this.lead.email;
-    }
-
-    get phone() {
-        return this.lead.phone || '';
-    }
-
-    isValid() {
-        return this.lead.name !== '' && this.lead.email.includes('@');
+    public static createFromDTO(dto: LeadDTO): Lead {
+        return new Lead({
+            ...dto,
+            createdAt: new Date(dto.createdAt),
+        });
     }
 }
