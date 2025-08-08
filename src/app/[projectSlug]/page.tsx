@@ -1,41 +1,16 @@
+'use client';
+
 import { database } from '@/data/project';
-import { notFound } from 'next/navigation';
-import type { Metadata } from 'next';
+import { notFound, useParams } from 'next/navigation';
+import { Header } from '@/ui/components/layout/Header';
+import { Footer } from '@/ui/components/layout/Footer';
 
 import { HeroSection } from '@/ui/components/landing-page/HeroSection';
-import { BenefitsSection } from '@/ui/components/landing-page/BenefitsSection';
-import { CTASection } from '@/ui/components/landing-page/CTASection';
-import { CopySection } from '@/ui/components/landing-page/CopySection';
-import {GallerySection} from "@/ui/components/landing-page/GallerySection";
 
-type Props = {
-    params: { projectSlug: string };
-};
+export default function RealEstateDevelopmentPage() {
+    const params = useParams();
+    const projectSlug = params.empreendimentoSlug as string;
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-    const { projectSlug } = params;
-    const development = database.Project.find(
-        (p) => p.slug === projectSlug
-    );
-
-    if (!development) {
-        return { title: 'Empreendimento não encontrado' };
-    }
-
-    return {
-        title: `${development.name} | ${development.location.neighborhood}`,
-        description: development.subheadline,
-    };
-}
-
-export async function generateStaticParams() {
-    return database.Project.map((development) => ({
-        projectSlug: development.slug,
-    }));
-}
-
-export default function RealEstateDevelopmentPage({ params }: Props) {
-    const { projectSlug } = params;
     const development = database.Project.find(
         (p) => p.slug === projectSlug
     );
@@ -44,37 +19,36 @@ export default function RealEstateDevelopmentPage({ params }: Props) {
         notFound();
     }
 
-    const globalColorStyles = `
-    :root {
-      --color-primary: ${development.colors.primary};
-      --color-secondary: ${development.colors.secondary};
-      --color-text-primary: ${development.colors.textPrimary};
-      --color-text-secondary: ${development.colors.textSecondary};
-    }
-  `;
+    const navLinks = [
+        { href: '#beneficios', label: 'Benefícios' },
+        { href: '#localizacao', label: 'Localização' },
+        { href: '#galeria', label: 'Galeria' },
+        { href: '#contato', label: 'Contato' },
+    ];
 
     return (
-        <div className="w-full">
-            <style>{globalColorStyles}</style>
+        <>
+            <Header projectName={development.name} navLinks={navLinks} />
+            <main>
+                {/* Passamos todos os dados necessários para a HeroSection */}
+                <HeroSection
+                    headline={development.headline}
+                    subheadline={development.subheadline}
+                    ctaText={development.cta.buttonText}
+                    posterUrl={development.images[0]}
+                    // videoUrl="/videos/taj-residences.mp4" // Você precisará adicionar um vídeo na pasta public/
+                />
 
-            <HeroSection
-                headline={development.headline}
-                subheadline={development.subheadline}
-                imageUrl={development.images[0]} // Usamos a primeira imagem como destaque
-            />
-
-            <CopySection
-                title="Uma Obra de Arte Habitável"
-                text={development.copy.opening}
-            />
-
-            <BenefitsSection benefits={development.benefits} />
-
-            <GallerySection images={development.images} projectName={development.name} />
-
-            {/*/!* Aqui entrarão os outros componentes: galeria, localização, etc. *!/*/}
-
-            <CTASection cta={development.cta} />
-        </div>
+                {/*
+          Aqui entrarão as outras seções:
+          <IntroSection ... />
+          <BenefitsSection ... />
+          <LocationSection ... />
+          <GallerySection ... />
+          <LeadCaptureSection ... />
+        */}
+            </main>
+            <Footer projectName={development.name} address={development.location.address} />
+        </>
     );
 }

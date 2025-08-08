@@ -6,8 +6,8 @@ import { LeadSchema, LeadFormData } from '../schemas/lead.schema';
 import { useLeadCapture } from '../hooks/useLeadCapture';
 
 import { Button } from '@/ui/components/landing-page/shared/Button';
-import { Input } from '@/ui/components/landing-page/shared/Input';
-import { Label } from '@/ui/components/landing-page/shared/Label';
+import { Input } from '@/ui/components/shared/Input';
+import { Label } from '@/ui/components/shared/Label';
 
 interface LeadCaptureFormProps {
     buttonText: string;

@@ -1,40 +1,53 @@
-import Image from 'next/image';
+import React from 'react';
+import { Button } from '../shared/Button';
+import { ArrowRight } from '../shared/Icons';
 
 interface HeroSectionProps {
     headline: string;
     subheadline: string;
-    imageUrl: string;
+    ctaText: string;
+    posterUrl: string;
+    videoUrl?: string;
 }
 
-export function HeroSection({ headline, subheadline, imageUrl }: HeroSectionProps) {
-    return (
-        <section
-            className="relative flex items-center justify-center w-full min-h-[70vh] text-white"
-        >
-            {/* Comentário: O componente <Image> do Next.js é usado para a imagem de fundo.
-        - layout="fill" e objectFit="cover" fazem a imagem cobrir toda a seção.
-        - priority indica ao Next.js para carregar esta imagem primeiro,
-          pois é a mais importante da página (melhora a métrica LCP).
-        - a classe 'brightness-50' do Tailwind escurece a imagem para que o texto
-          branco por cima fique mais legível.
-      */}
-            <Image
-                src={imageUrl}
-                alt={headline}
-                fill
-                style={{ objectFit: 'cover' }}
-                priority
-                className="z-0 brightness-50"
-            />
+export const HeroSection = ({ headline, subheadline, ctaText, posterUrl, videoUrl }: HeroSectionProps) => {
+    const scrollTo = (selector: string) => {
+        if (typeof window !== "undefined") {
+            document.querySelector(selector)?.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
 
-            <div className="relative z-10 text-center p-4 max-w-5xl mx-auto">
-                <h1 className="text-4xl md:text-6xl font-bold drop-shadow-lg" style={{ color: 'white' }}>
+    return (
+        <section id="hero" className="relative text-white h-screen flex items-center bg-gray-900 font-serif overflow-hidden">
+            {/* Container do Vídeo/Imagem de Fundo */}
+            <div className="absolute inset-0 z-0">
+                {videoUrl ? (
+                    <video autoPlay loop muted playsInline className="w-full h-full object-cover" poster={posterUrl}>
+                        <source src={videoUrl} type="video/mp4" />
+                    </video>
+                ) : (
+                    // Caso não haja vídeo, usamos o poster como imagem de fundo
+                    <img src={posterUrl} alt={headline} className="w-full h-full object-cover" />
+                )}
+            </div>
+
+            {/* Sobreposição escura para contraste */}
+            <div className="absolute inset-0 bg-black opacity-50 z-10"></div>
+
+            {/* Conteúdo de Texto */}
+            <div className="relative container mx-auto px-6 text-center z-20">
+                <h1 className="text-5xl md:text-7xl font-bold mt-4 leading-tight drop-shadow-lg">
                     {headline}
                 </h1>
-                <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto drop-shadow-md">
+                <p className="mt-6 text-lg md:text-xl max-w-4xl mx-auto text-gray-200 font-sans drop-shadow-md">
                     {subheadline}
                 </p>
+                <div className="mt-10">
+                    <Button variant="primary" className="text-lg" onClick={() => scrollTo('#contato')}>
+                        {ctaText} <ArrowRight />
+                    </Button>
+                </div>
             </div>
         </section>
     );
-}
+};

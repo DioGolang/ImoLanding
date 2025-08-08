@@ -2,13 +2,21 @@ import type { Config } from "tailwindcss";
 
 const config: Config = {
     content: [
-        "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-        "./src/ui/**/*.{js,ts,jsx,tsx,mdx}",
-        "./src/application/features/**/*.{js,ts,jsx,tsx,mdx}",
-        "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+        "./src/**/*.{js,ts,jsx,tsx,mdx}",
     ],
     theme: {
         extend: {
+            fontFamily: {
+                sans: ['var(--font-source-sans)'],
+                serif: ['var(--font-playfair)'],
+            },
+            colors: {
+                brand: {
+                    primary: '#1A2E35',
+                    gold: '#b89550',
+                    'gold-hover': '#a1803c',
+                }
+            }
         },
     },
     plugins: [require("@tailwindcss/aspect-ratio")],
