@@ -5,7 +5,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { LeadSchema, LeadFormData } from '../schemas/lead.schema';
 import { useLeadCapture } from '../hooks/useLeadCapture';
 
-import { Button } from '@/ui/components/landing-page/shared/Button';
+import { Button } from '@/ui/components/shared/Button';
 import { Input } from '@/ui/components/shared/Input';
 import { Label } from '@/ui/components/shared/Label';
 

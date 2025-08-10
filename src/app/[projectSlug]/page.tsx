@@ -6,10 +6,13 @@ import { Header } from '@/ui/components/layout/Header';
 import { Footer } from '@/ui/components/layout/Footer';
 
 import { HeroSection } from '@/ui/components/landing-page/HeroSection';
+import {IntroSection} from "@/ui/components/landing-page/IntroSection";
+import {BenefitsSection} from "@/ui/components/landing-page/BenefitsSection";
+import {LocationSection} from "@/ui/components/landing-page/LocationSection.";
 
 export default function RealEstateDevelopmentPage() {
     const params = useParams();
-    const projectSlug = params.empreendimentoSlug as string;
+    const projectSlug = params.projectSlug as string;
 
     const development = database.Project.find(
         (p) => p.slug === projectSlug
@@ -30,13 +33,22 @@ export default function RealEstateDevelopmentPage() {
         <>
             <Header projectName={development.name} navLinks={navLinks} />
             <main>
-                {/* Passamos todos os dados necessários para a HeroSection */}
                 <HeroSection
                     headline={development.headline}
                     subheadline={development.subheadline}
                     ctaText={development.cta.buttonText}
                     posterUrl={development.images[0]}
                     // videoUrl="/videos/taj-residences.mp4" // Você precisará adicionar um vídeo na pasta public/
+                />
+
+                <IntroSection
+                    title="Um lugar para pertencer."
+                    text={development.copy.opening}
+                />
+                <BenefitsSection benefits={development.benefits} />
+                <LocationSection
+                    location={development.location}
+                    copy={development.copy.location}
                 />
 
                 {/*

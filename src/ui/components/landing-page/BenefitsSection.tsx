@@ -1,47 +1,62 @@
-import type { Project } from "@/domain/types/project.types";
+import type { Project } from '@/domain/types/project.types';
+// Importamos todos os nossos ícones
+import {
+    CreativeIcon,
+    EVChargerIcon,
+    GeneratorIcon,
+    ResortIcon,
+    SignatureIcon,
+} from '@/ui/components/shared/Icons';
+import React from 'react';
 
 interface BenefitsSectionProps {
     readonly benefits: Readonly<Project['benefits']>;
 }
 
-const IconPlaceholder = ({ name }: { name: string }) => (
-    <div
-        className="flex items-center justify-center w-16 h-16 rounded-full bg-opacity-10"
-        style={{ backgroundColor: 'var(--color-secondary)' }}
-    >
-        <span
-            className="text-2xl font-bold"
-            style={{ color: 'var(--color-primary)' }}
-        >
-            {name.charAt(0)}
-        </span>
-    </div>
-);
+interface BenefitCardProps {
+    iconName: string;
+    title: string;
+    children: React.ReactNode;
+}
 
-export function BenefitsSection({ benefits }: BenefitsSectionProps) {
+const iconMap: Record<string, React.ReactNode> = {
+    Signature: <SignatureIcon />,
+    Customize: <CreativeIcon />,
+    Resort: <ResortIcon />,
+    Generator: <GeneratorIcon />,
+    EVCharger: <EVChargerIcon />,
+};
+
+const BenefitCard = ({ iconName, title, children }: BenefitCardProps) => {
+    // A lógica para escolher o ícone agora está dentro do próprio cartão.
+    const iconElement = iconMap[iconName] || null;
+
     return (
-        <section className="py-16 md:py-24 bg-gray-50">
-            <div className="container mx-auto px-4">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div className="bg-white p-8 rounded-lg text-center transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+            <div className="text-brand-gold inline-block mb-5">{iconElement}</div>
+            <h3 className="text-xl font-bold text-gray-800 mb-3 font-serif">{title}</h3>
+            <p className="text-gray-600 leading-relaxed text-sm">{children}</p>
+        </div>
+    );
+};
+
+
+export const BenefitsSection = ({ benefits }: BenefitsSectionProps) => {
+    return (
+        <section id="beneficios" className="py-24 bg-stone-100">
+            <div className="container mx-auto px-6">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
                     {benefits.map((benefit) => (
-                        <div key={benefit.title} className="flex flex-col items-center text-center">
-                            <IconPlaceholder name={benefit.icon} />
-                            <h3
-                                className="mt-5 text-xl font-bold"
-                                style={{ color: 'var(--color-text-primary)' }}
-                            >
-                                {benefit.title}
-                            </h3>
-                            <p
-                                className="mt-2 text-base leading-relaxed"
-                                style={{ color: 'var(--color-text-secondary)' }}
-                            >
-                                {benefit.description}
-                            </p>
-                        </div>
+                        <BenefitCard
+                            key={benefit.title}
+                            iconName={benefit.icon}
+                            title={benefit.title}
+                        >
+                            {benefit.description}
+                        </BenefitCard>
                     ))}
                 </div>
             </div>
         </section>
-    )
-}
+    );
+};
