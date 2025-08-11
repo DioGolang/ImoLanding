@@ -38,7 +38,7 @@ export default function RealEstateDevelopmentPage() {
                     subheadline={development.subheadline}
                     ctaText={development.cta.buttonText}
                     posterUrl={development.images[0]}
-                    // videoUrl="/videos/taj-residences.mp4" // Você precisará adicionar um vídeo na pasta public/
+                    // videoUrl="/videos/taj-residences.mp4" //
                 />
 
                 <IntroSection
