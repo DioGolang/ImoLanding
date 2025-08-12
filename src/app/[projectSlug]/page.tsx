@@ -52,7 +52,7 @@ export default function RealEstateDevelopmentPage() {
                 />
 
                 {/*
-          Aqui entrarão as outras seções:
+           outras seções:
           <IntroSection ... />
           <BenefitsSection ... />
           <LocationSection ... />
