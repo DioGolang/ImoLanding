@@ -9,6 +9,7 @@ import { HeroSection } from '@/ui/components/landing-page/HeroSection';
 import {IntroSection} from "@/ui/components/landing-page/IntroSection";
 import {BenefitsSection} from "@/ui/components/landing-page/BenefitsSection";
 import {LocationSection} from "@/ui/components/landing-page/LocationSection.";
+import {ExperiencesSection} from "@/ui/components/landing-page/ExperiencesSection";
 
 export default function RealEstateDevelopmentPage() {
     const params = useParams();
@@ -28,6 +29,8 @@ export default function RealEstateDevelopmentPage() {
         { href: '#galeria', label: 'Galeria' },
         { href: '#contato', label: 'Contato' },
     ];
+
+    const experienceImageUrl = development.images.find(img => img.includes('tag-5')) || development.images[4];
 
     return (
         <>
@@ -49,6 +52,12 @@ export default function RealEstateDevelopmentPage() {
                 <LocationSection
                     location={development.location}
                     copy={development.copy.location}
+                />
+
+                <ExperiencesSection
+                    copy={development.copy.leisure}
+                    imageUrl={experienceImageUrl}
+                    projectName={development.name}
                 />
 
                 {/*
