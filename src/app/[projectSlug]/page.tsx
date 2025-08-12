@@ -10,6 +10,8 @@ import {IntroSection} from "@/ui/components/landing-page/IntroSection";
 import {BenefitsSection} from "@/ui/components/landing-page/BenefitsSection";
 import {LocationSection} from "@/ui/components/landing-page/LocationSection.";
 import {ExperiencesSection} from "@/ui/components/landing-page/ExperiencesSection";
+import {GallerySection} from "@/ui/components/landing-page/GallerySection";
+import {LeadCaptureSection} from "@/ui/components/landing-page/LeadCaptureSection";
 
 export default function RealEstateDevelopmentPage() {
     const params = useParams();
@@ -59,6 +61,9 @@ export default function RealEstateDevelopmentPage() {
                     imageUrl={experienceImageUrl}
                     projectName={development.name}
                 />
+
+                <GallerySection images={development.images} projectName={development.name} />
+                <LeadCaptureSection cta={development.cta} />
 
                 {/*
            outras seções:
