@@ -8,16 +8,17 @@ import { Footer } from '@/ui/components/layout/Footer';
 import { HeroSection } from '@/ui/components/landing-page/HeroSection';
 import {IntroSection} from "@/ui/components/landing-page/IntroSection";
 import {BenefitsSection} from "@/ui/components/landing-page/BenefitsSection";
-import {LocationSection} from "@/ui/components/landing-page/LocationSection.";
+import {LocationSection} from "@/ui/components/landing-page/LocationSection";
 import {ExperiencesSection} from "@/ui/components/landing-page/ExperiencesSection";
 import {GallerySection} from "@/ui/components/landing-page/GallerySection";
 import {LeadCaptureSection} from "@/ui/components/landing-page/LeadCaptureSection";
+import {TourSection} from "@/ui/components/landing-page/TourSection";
 
 export default function RealEstateDevelopmentPage() {
     const params = useParams();
     const projectSlug = params.projectSlug as string;
 
-    const development = database.Project.find(
+    const development = database.projects.find(
         (p) => p.slug === projectSlug
     );
 
@@ -63,6 +64,12 @@ export default function RealEstateDevelopmentPage() {
                 />
 
                 <GallerySection images={development.images} projectName={development.name} />
+
+                <TourSection
+                    tourUrl={development.virtualTourUrl}
+                    previewImageUrl={development.images[5]}
+                />
+
                 <LeadCaptureSection cta={development.cta} />
 
                 {/*

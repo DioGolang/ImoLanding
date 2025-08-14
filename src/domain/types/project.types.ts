@@ -38,6 +38,12 @@ type CallToAction = {
     buttonText: string;
 };
 
+type FloorPlan = {
+    name: string; // Ex: "Apartamento Tipo - 3 Suítes"
+    area: string; // Ex: "191m²"
+    imageUrl: string;
+};
+
 /**
  * @interface Project
  * @description Define a estrutura completa de dados para um empreendimento imobiliário.
@@ -56,7 +62,7 @@ export interface Project {
     benefits: Benefit[];
     leisureHighlights: string[];
     images: string[]; // Array de URLs/caminhos para as imagens
-    floorPlan: string[]; // Array de URLs/caminhos para as imagens das plantas
+    floorPlans: FloorPlan[];
     virtualTourUrl?: string;
     cta: CallToAction;
 }

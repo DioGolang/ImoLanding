@@ -2,7 +2,7 @@
 import type { Project } from '@/domain/types/project.types';
 
 export const database = {
-    Project: [
+    projects: [
         {
             slug: 'taj-residences-ibirapuera',
             name: 'Taj Residences Ibirapuera',
@@ -96,6 +96,18 @@ export const database = {
                 '/images/taj-residences/tag-11.jpg',
                 '/images/taj-residences/tag-12.jpg',
                 '/images/taj-residences/tag-13.jpg',
+            ],
+            floorPlans: [
+                {
+                    name: 'Apartamento Tipo',
+                    area: '191m²',
+                    imageUrl: '/images/taj-residences/planta-tipo.jpg', // Terá de adicionar esta imagem
+                },
+                {
+                    name: 'Cobertura Duplex',
+                    area: '465m²',
+                    imageUrl: '/images/taj-residences/planta-cobertura.jpg', // Terá de adicionar esta imagem
+                },
             ],
             virtualTourUrl: '/tour-virtual/taj-residences-decorado',
             cta: {
