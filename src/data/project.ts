@@ -96,6 +96,8 @@ export const database = {
                 '/images/taj-residences/tag-12.jpg',
                 '/images/taj-residences/tag-13.jpg',
             ],
+            bannerImage: '/images/taj-residences/Padrao-4-Suites.jpg',
+            bannerVideo: '/images/nuv-moema/living.jpg',
             floorPlans: [
                 {
                     name: 'Apartamento Tipo',
@@ -127,38 +129,38 @@ export const database = {
             },
         },
         {
-            "slug": "nuv-moema",
-            "name": "NUV Moema",
-            "colors": {
-                "primary": "#383A44",
-                "secondary": "#A8978A",
-                "textPrimary": "#2D3748",
-                "textSecondary": "#4A5568"
+            slug: "nuv-moema",
+            name: "NUV Moema",
+            colors: {
+                primary: "#383A44",
+                secondary: "#A8978A",
+                textPrimary: "#2D3748",
+                textSecondary: "#4A5568"
             },
-            "location": {
-                "address": "Avenida Jamaris, 633",
-                "neighborhood": "Moema",
-                "city": "São Paulo",
-                "complement": "Localizado em uma rua plana, tranquila e cercada por arborização, a poucos minutos do Parque Ibirapuera.",
-                "mapUrl": "http://googleusercontent.com/file_content/6"
+            location: {
+                address: "Avenida Jamaris, 633",
+                neighborhood: "Moema",
+                city: "São Paulo",
+                complement: "O privilégio de uma rua tranquila e arborizada, a poucos minutos do Parque Ibirapuera.",
+                mapUrl: "http://googleusercontent.com/file_content/6"
             },
-            "headline": "Nature Unique View. Uma nova perspectiva do luxo.",
-            "subheadline": "No coração de Moema, um projeto exclusivo com apartamentos de 207m² a 447m², 4 suítes e um impressionante pé-direito duplo de 5,48m na sala e no terraço, redefinindo a experiência de morar com sofisticação, amplitude e design autoral.",
-            "copy": {
-                "opening": "Certos endereços nos convidam a olhar ao redor. Alguns raros, nos convidam a sentir. Enxergando o mundo de um ângulo que se expande. Mais fluido, amplo e essencial. Aqui, o verde cresce junto à arquitetura, a luz dança pelas janelas e o ar parece mais leve, como se o concreto respirasse. É desse olhar que nasce o NUV.",
-                "location": "Localizado na tranquila e arborizada Avenida Jamaris, o projeto está em um dos pontos mais desejados de Moema, bairro que equilibra natureza, mobilidade e alta qualidade de vida. A poucos minutos do Parque Ibirapuera e com fácil acesso às principais avenidas, o empreendimento está cercado por tudo que importa no cotidiano: escolas renomadas, universidades e uma seleção criteriosa de restaurantes e serviços.",
-                "leisure": "Imagine um mergulho na piscina coberta climatizada após um treino no fitness de alto padrão. Celebrar momentos inesquecíveis no salão de festas com quatro ambientes ou reunir amigos na churrasqueira a carvão. No NUV, as áreas comuns foram desenhadas como uma extensão da sua casa, com espaços como playground com mini floresta, praça com lareira e um pet place de 30m², garantindo lazer e bem-estar para toda a família."
+            headline: "A Vida é Única para Viver o Genérico.",
+            subheadline: "No coração de Moema, o NUV é um convite para quem entende que o verdadeiro luxo não está no excesso, mas na essência. Um projeto de 207m² com pé-direito duplo de 5,48m, onde cada detalhe tem alma.",
+            copy: {
+                opening: "Em um mercado de fachadas semelhantes e interiores repetidos, a Planik escolheu fazer diferente. Aqui, cada projeto nasce com critério, feito para refletir de forma autêntica quem vai viver ali, dialogando com seu tempo, seu espaço e sua história. Criar, para nós, é oferecer significado e propósito além da aparência. Não construímos apenas lugares para morar. Construímos lugares para pertencer.",
+                location: "Na Avenida Jamaris, a natureza se impõe com leveza e a luz percorre cada espaço. Uma localização que traduz o equilíbrio raro entre a energia urbana e o refúgio arborizado. No coração de tudo o que importa, lazer, gastronomia autoral e cultura vibrante convergem para este endereço singular.",
+                leisure: "Os cenários para as suas melhores memórias foram desenhados como uma extensão natural da sua casa. Da piscina coberta que convida à contemplação ao fitness de alto padrão, cada ambiente foi pensado para acolher, inspirar e celebrar a vida em sua forma mais pura."
             },
-            "units": {
-                "area": "207m² a 447m²",
-                "types": [
+            units: {
+                area: "207m² a 447m²",
+                types: [
                     "Apartamentos tipo com 207m² e 208m² (4 suítes)",
                     "Coberturas Duplex com 445m² e 447m² (4 suítes)"
                 ],
-                "parkingSpots": "3 a 4 vagas demarcadas",
-                "extra": "Depósito exclusivo para todas as unidades"
+                parkingSpots: "3 a 4 vagas demarcadas",
+                extra: "Depósito exclusivo para todas as unidades"
             },
-            "mainFeatures": [
+            mainFeatures: [
                 "Pé-direito duplo de 5,48m no living e terraço",
                 "Hall social privativo com elevador com controle de acesso",
                 "Todos os banheiros das suítes com ventilação natural",
@@ -168,24 +170,24 @@ export const database = {
                 "Infraestrutura para carregador de carro elétrico (1 por unidade)",
                 "Guarita blindada com projeto de segurança e clausura"
             ],
-            "benefits": [
+            benefits: [
                 {
-                    "icon": "Signature",
-                    "title": "Arquitetura que Respira",
-                    "description": "Viva em um espaço onde a luz e a amplitude são protagonistas. O pé-direito duplo de 5,48m, uma raridade em São Paulo, cria uma atmosfera de casa e uma sensação de liberdade inigualável, com biofilia integrada em todo o projeto."
+                    icon: "Signature",
+                    title: "Arquitetura com Alma",
+                    description: "O pé-direito duplo de 5,48m não é apenas um detalhe, é uma declaração. Uma atmosfera de casa que amplia a luz, o ar e as suas perspectivas."
                 },
                 {
-                    "icon": "Customize",
-                    "title": "Liberdade para Criar seu Próprio Luxo",
-                    "description": "Com o programa Planik One, você tem a liberdade de personalizar layouts, acabamentos e soluções técnicas, transformando seu apartamento em um reflexo autêntico da sua identidade e estilo de vida."
+                    icon: "Customize",
+                    title: "Sua Identidade, Nosso Projeto",
+                    description: "Com o programa Planik One, seu apartamento se torna uma tela em branco para que você possa expressar sua personalidade em cada ambiente e acabamento."
                 },
                 {
-                    "icon": "Resort",
-                    "title": "Exclusividade em Cada Detalhe",
-                    "description": "Em uma torre única com apenas 38 unidades, desfrute de áreas comuns completas, como duas piscinas climatizadas e fitness, com a privacidade e tranquilidade que só um projeto verdadeiramente exclusivo pode oferecer."
+                    icon: "Resort",
+                    title: "Exclusividade e Natureza",
+                    description: "Em uma torre única com apenas 38 unidades, a privacidade é o maior luxo. Um refúgio cercado de verde, com lazer completo para renovar suas energias."
                 }
             ],
-            "leisureHighlights": [
+            leisureHighlights: [
                 "Piscina coberta climatizada com raia de 20m",
                 "Piscina descoberta climatizada com deck molhado",
                 "Fitness de 89m²",
@@ -195,7 +197,7 @@ export const database = {
                 "Praça com Lareira",
                 "Pet Place com 30m²"
             ],
-            "images": [
+            images: [
                 '/images/nuv-moema/nuv-moema-fachada-01.jpg',
                 '/images/nuv-moema/nuv-moema-fachada.jpg',
                 '/images/nuv-moema/nuv-moema-piscina-coberta.jpg',
@@ -210,7 +212,9 @@ export const database = {
                 '/images/nuv-moema/nuv-moema-academia.jpg',
                 '/images/nuv-moema/nuv-moema-academia-1.jpg',
             ],
-            "floorPlans": [
+            bannerImage: '/images/nuv-moema/nuv-moema-living.jpg',
+            bannerVideo: '/images/nuv-moema/living.mp4',
+            floorPlans: [
                 {
                     "name": "Apartamento Padrão - 4 Suítes",
                     "area": "207m²",
@@ -232,10 +236,11 @@ export const database = {
                     "imageUrl": "/images/nuv-moema/nuv-moema-cobertura-final-2.jpg"
                 }
             ],
-            "cta": {
-                "title": "O extraordinário espera por você.",
-                "subtitle": "As unidades são limitadas e a exclusividade é a essência deste projeto.",
-                "buttonText": "Agende sua visita privativa"
+            virtualTourUrl: '/tour-virtual/taj-residences-decorado',
+            cta: {
+                title: "Viva um projeto onde cada detalhe tem alma.",
+                subtitle: "Receba mais informações com exclusividade e descubra uma nova perspectiva do luxo em Moema.",
+                buttonText: "Solicitar Contato"
             }
         },
     ] as const, // <-- TypeScript trick for readonly data

@@ -61,7 +61,9 @@ export interface Project {
     mainFeatures: string[];
     benefits: Benefit[];
     leisureHighlights: string[];
-    images: string[]; // Array de URLs/caminhos para as imagens
+    images: string[];
+    bannerImage: string
+    bannerVideo: string
     floorPlans: FloorPlan[];
     virtualTourUrl?: string;
     cta: CallToAction;

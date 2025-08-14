@@ -8,12 +8,15 @@ import { Footer } from '@/ui/components/layout/Footer';
 import { HeroSection } from '@/ui/components/landing-page/HeroSection';
 import {IntroSection} from "@/ui/components/landing-page/IntroSection";
 import {BenefitsSection} from "@/ui/components/landing-page/BenefitsSection";
+import { CopySection } from '@/ui/components/landing-page/CopySection';
 import {LocationSection} from "@/ui/components/landing-page/LocationSection";
 import {ExperiencesSection} from "@/ui/components/landing-page/ExperiencesSection";
 import {GallerySection} from "@/ui/components/landing-page/GallerySection";
 import {LeadCaptureSection} from "@/ui/components/landing-page/LeadCaptureSection";
 import {TourSection} from "@/ui/components/landing-page/TourSection";
 import {FloorPlanSection} from "@/ui/components/landing-page/FloorPlanSection";
+import { StickyInquiryBar } from '@/ui/components/landing-page/StickyInquiryBar';
+
 
 export default function RealEstateDevelopmentPage() {
     const params = useParams();
@@ -34,8 +37,7 @@ export default function RealEstateDevelopmentPage() {
         { href: '#contato', label: 'Contato' },
     ];
 
-    const experienceImageUrl = development.images.find(img => img.includes('tag-5')) || development.images[4];
-
+    const experienceImageUrl = [...development.images].find(img => img.includes('fachada')) || development.images[8];
     return (
         <>
             <Header projectName={development.name} navLinks={navLinks} />
@@ -44,15 +46,26 @@ export default function RealEstateDevelopmentPage() {
                     headline={development.headline}
                     subheadline={development.subheadline}
                     ctaText={development.cta.buttonText}
-                    posterUrl={development.images[0]}
-                    // videoUrl="/videos/taj-residences.mp4" //
-                />
+                    posterUrl={development.bannerImage}
+                    videoUrl={development.bannerVideo}
+                 />
 
                 <IntroSection
                     title="Um lugar para pertencer."
                     text={development.copy.opening}
                 />
                 <BenefitsSection benefits={development.benefits} />
+
+                <CopySection
+                    id="sobre"
+                    eyebrow="Sobre o Empreendimento"
+                    title="Arquitetura que combina conforto e elegância"
+                    text="Cada metro foi planejado para maximizar a iluminação natural, criar fluxos inteligentes e proporcionar experiências memoráveis em família."
+                    highlightWords={['conforto', 'elegância']}
+                    ctaLabel="Fale com um consultor"
+                    ctaHref="#contato"
+                />
+
                 <LocationSection
                     location={development.location}
                     copy={development.copy.location}
@@ -74,6 +87,7 @@ export default function RealEstateDevelopmentPage() {
                 />
 
                 <LeadCaptureSection cta={development.cta} />
+                <StickyInquiryBar whatsappLink="https://wa.me/5548999999999" phone="(48) 99999-9999" />
 
             </main>
             <Footer projectName={development.name} address={development.location.address} />
