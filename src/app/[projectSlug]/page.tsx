@@ -13,6 +13,7 @@ import {ExperiencesSection} from "@/ui/components/landing-page/ExperiencesSectio
 import {GallerySection} from "@/ui/components/landing-page/GallerySection";
 import {LeadCaptureSection} from "@/ui/components/landing-page/LeadCaptureSection";
 import {TourSection} from "@/ui/components/landing-page/TourSection";
+import {FloorPlanSection} from "@/ui/components/landing-page/FloorPlanSection";
 
 export default function RealEstateDevelopmentPage() {
     const params = useParams();
@@ -65,6 +66,8 @@ export default function RealEstateDevelopmentPage() {
 
                 <GallerySection images={development.images} projectName={development.name} />
 
+                <FloorPlanSection floorPlans={development.floorPlans} />
+
                 <TourSection
                     tourUrl={development.virtualTourUrl}
                     previewImageUrl={development.images[5]}
@@ -72,14 +75,6 @@ export default function RealEstateDevelopmentPage() {
 
                 <LeadCaptureSection cta={development.cta} />
 
-                {/*
-           outras seções:
-          <IntroSection ... />
-          <BenefitsSection ... />
-          <LocationSection ... />
-          <GallerySection ... />
-          <LeadCaptureSection ... />
-        */}
             </main>
             <Footer projectName={development.name} address={development.location.address} />
         </>

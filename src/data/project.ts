@@ -1,4 +1,3 @@
-
 import type { Project } from '@/domain/types/project.types';
 
 export const database = {
@@ -101,12 +100,22 @@ export const database = {
                 {
                     name: 'Apartamento Tipo',
                     area: '191m²',
-                    imageUrl: '/images/taj-residences/planta-tipo.jpg', // Terá de adicionar esta imagem
+                    imageUrl: '/images/taj-residences/Padrao-4-Suites.jpg',
                 },
                 {
                     name: 'Cobertura Duplex',
                     area: '465m²',
-                    imageUrl: '/images/taj-residences/planta-cobertura.jpg', // Terá de adicionar esta imagem
+                    imageUrl: '/images/taj-residences/Padrao-4-Suites-1.jpg',
+                },
+                {
+                    name: 'Cobertura Duplex',
+                    area: '465m²',
+                    imageUrl: '/images/taj-residences/Opcao.jpg',
+                },
+                {
+                    name: 'Cobertura Duplex',
+                    area: '465m²',
+                    imageUrl: '/images/taj-residences/Opcao-1.jpg',
                 },
             ],
             virtualTourUrl: '/tour-virtual/taj-residences-decorado',
@@ -117,7 +126,118 @@ export const database = {
                 buttonText: 'Agende sua visita privativa',
             },
         },
-        // Futuramente, você pode adicionar um novo objeto de empreendimento aqui
+        {
+            "slug": "nuv-moema",
+            "name": "NUV Moema",
+            "colors": {
+                "primary": "#383A44",
+                "secondary": "#A8978A",
+                "textPrimary": "#2D3748",
+                "textSecondary": "#4A5568"
+            },
+            "location": {
+                "address": "Avenida Jamaris, 633",
+                "neighborhood": "Moema",
+                "city": "São Paulo",
+                "complement": "Localizado em uma rua plana, tranquila e cercada por arborização, a poucos minutos do Parque Ibirapuera.",
+                "mapUrl": "http://googleusercontent.com/file_content/6"
+            },
+            "headline": "Nature Unique View. Uma nova perspectiva do luxo.",
+            "subheadline": "No coração de Moema, um projeto exclusivo com apartamentos de 207m² a 447m², 4 suítes e um impressionante pé-direito duplo de 5,48m na sala e no terraço, redefinindo a experiência de morar com sofisticação, amplitude e design autoral.",
+            "copy": {
+                "opening": "Certos endereços nos convidam a olhar ao redor. Alguns raros, nos convidam a sentir. Enxergando o mundo de um ângulo que se expande. Mais fluido, amplo e essencial. Aqui, o verde cresce junto à arquitetura, a luz dança pelas janelas e o ar parece mais leve, como se o concreto respirasse. É desse olhar que nasce o NUV.",
+                "location": "Localizado na tranquila e arborizada Avenida Jamaris, o projeto está em um dos pontos mais desejados de Moema, bairro que equilibra natureza, mobilidade e alta qualidade de vida. A poucos minutos do Parque Ibirapuera e com fácil acesso às principais avenidas, o empreendimento está cercado por tudo que importa no cotidiano: escolas renomadas, universidades e uma seleção criteriosa de restaurantes e serviços.",
+                "leisure": "Imagine um mergulho na piscina coberta climatizada após um treino no fitness de alto padrão. Celebrar momentos inesquecíveis no salão de festas com quatro ambientes ou reunir amigos na churrasqueira a carvão. No NUV, as áreas comuns foram desenhadas como uma extensão da sua casa, com espaços como playground com mini floresta, praça com lareira e um pet place de 30m², garantindo lazer e bem-estar para toda a família."
+            },
+            "units": {
+                "area": "207m² a 447m²",
+                "types": [
+                    "Apartamentos tipo com 207m² e 208m² (4 suítes)",
+                    "Coberturas Duplex com 445m² e 447m² (4 suítes)"
+                ],
+                "parkingSpots": "3 a 4 vagas demarcadas",
+                "extra": "Depósito exclusivo para todas as unidades"
+            },
+            "mainFeatures": [
+                "Pé-direito duplo de 5,48m no living e terraço",
+                "Hall social privativo com elevador com controle de acesso",
+                "Todos os banheiros das suítes com ventilação natural",
+                "Piso nivelado e sem viga entre sala e terraço",
+                "Tratamento acústico no piso e nas paredes de divisa entre unidades",
+                "Gerador full que atende apartamentos e áreas comuns",
+                "Infraestrutura para carregador de carro elétrico (1 por unidade)",
+                "Guarita blindada com projeto de segurança e clausura"
+            ],
+            "benefits": [
+                {
+                    "icon": "Signature",
+                    "title": "Arquitetura que Respira",
+                    "description": "Viva em um espaço onde a luz e a amplitude são protagonistas. O pé-direito duplo de 5,48m, uma raridade em São Paulo, cria uma atmosfera de casa e uma sensação de liberdade inigualável, com biofilia integrada em todo o projeto."
+                },
+                {
+                    "icon": "Customize",
+                    "title": "Liberdade para Criar seu Próprio Luxo",
+                    "description": "Com o programa Planik One, você tem a liberdade de personalizar layouts, acabamentos e soluções técnicas, transformando seu apartamento em um reflexo autêntico da sua identidade e estilo de vida."
+                },
+                {
+                    "icon": "Resort",
+                    "title": "Exclusividade em Cada Detalhe",
+                    "description": "Em uma torre única com apenas 38 unidades, desfrute de áreas comuns completas, como duas piscinas climatizadas e fitness, com a privacidade e tranquilidade que só um projeto verdadeiramente exclusivo pode oferecer."
+                }
+            ],
+            "leisureHighlights": [
+                "Piscina coberta climatizada com raia de 20m",
+                "Piscina descoberta climatizada com deck molhado",
+                "Fitness de 89m²",
+                "Salão de Festas com 4 ambientes e 93m²",
+                "Churrasqueira a carvão",
+                "Playground com mini floresta e árvores frutíferas",
+                "Praça com Lareira",
+                "Pet Place com 30m²"
+            ],
+            "images": [
+                '/images/nuv-moema/nuv-moema-fachada-01.jpg',
+                '/images/nuv-moema/nuv-moema-fachada.jpg',
+                '/images/nuv-moema/nuv-moema-piscina-coberta.jpg',
+                '/images/nuv-moema/nuv-moema-piscina.jpg',
+                '/images/nuv-moema/nuv-moema-lobby.jpg',
+                '/images/nuv-moema/nuv-moema-praca-de-fogo.jpg',
+                '/images/nuv-moema/nuv-moema-salao-de-festas.jpg',
+                '/images/nuv-moema/nuv-moema-petplace.jpg',
+                '/images/nuv-moema/nuv-moema-churrasqueira.jpg',
+                '/images/nuv-moema/nuv-moema-brinquedoteca1.jpg',
+                '/images/nuv-moema/nuv-moema-brinquedoteca.jpg',
+                '/images/nuv-moema/nuv-moema-academia.jpg',
+                '/images/nuv-moema/nuv-moema-academia-1.jpg',
+            ],
+            "floorPlans": [
+                {
+                    "name": "Apartamento Padrão - 4 Suítes",
+                    "area": "207m²",
+                    "imageUrl": "/images/nuv-moema/nuv-moema-final-1.jpg"
+                },
+                {
+                    "name": "Apartamento Padrão - 3 Suítes (Sala Ampliada)",
+                    "area": "207m²",
+                    "imageUrl": "/images/nuv-moema/nuv-moema-final-1-opcao.jpg"
+                },
+                {
+                    "name": "Cobertura Duplex - Pav. Inferior",
+                    "area": "445m²",
+                    "imageUrl": "/images/nuv-moema/nuv-moema-cobertura.jpg"
+                },
+                {
+                    "name": "Cobertura Duplex - Pav. Superior",
+                    "area": "447m²",
+                    "imageUrl": "/images/nuv-moema/nuv-moema-cobertura-final-2.jpg"
+                }
+            ],
+            "cta": {
+                "title": "O extraordinário espera por você.",
+                "subtitle": "As unidades são limitadas e a exclusividade é a essência deste projeto.",
+                "buttonText": "Agende sua visita privativa"
+            }
+        },
     ] as const, // <-- TypeScript trick for readonly data
 };
 // O 'as const' prevenindo modificações acidentais.
