@@ -87,8 +87,8 @@ export const FloorPlanSection = ({ floorPlans }: FloorPlanSectionProps) => {
                                     'relative rounded-full px-5 py-2.5 font-sans text-sm font-medium tracking-wide transition',
                                     'focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold/60',
                                     selected
-                                        ? 'bg-brand-gold text-neutral-900 shadow-[0_0_0_1px_rgba(212,182,98,0.35),0_6px_24px_-4px_rgba(212,182,98,0.45)]'
-                                        : 'bg-neutral-800/40 text-neutral-300 hover:text-neutral-100 hover:bg-neutral-800/60'
+                                        ? 'bg-brand-gold text-neutral-500 shadow-[0_0_0_1px_rgba(212,182,98,0.35),0_6px_24px_-4px_rgba(212,182,98,0.45)]'
+                                        : 'bg-neutral-800/40 text-neutral-300 hover:text-neutral-100 hover:bg-neutral-500'
                                 )}
                             >
                 <span className="flex items-center gap-2">

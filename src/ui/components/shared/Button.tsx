@@ -9,8 +9,8 @@ export const Button = ({ children, variant = 'primary', className = '', ...props
     const baseClasses = 'px-8 py-4 rounded-md font-semibold text-center transition-all duration-300 ease-in-out transform hover:scale-105 inline-flex items-center justify-center gap-2 shadow-lg';
 
     const variants = {
-        primary: 'bg-brand-gold text-white hover:bg-brand-gold-hover',
-        secondary: 'bg-gray-800 text-white hover:bg-gray-700',
+        primary: 'bg-white text-black hover:bg-brand-gold-hover',
+        secondary: 'bg-gray-800 text-black hover:bg-gray-700',
     };
 
     return (
