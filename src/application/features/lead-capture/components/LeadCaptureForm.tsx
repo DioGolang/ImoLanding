@@ -23,13 +23,12 @@ export function LeadCaptureForm({ buttonText }: LeadCaptureFormProps) {
         reset,
     } = useForm<LeadFormData>({
         resolver: zodResolver(LeadSchema),
+        defaultValues: { name: '', email: '', phone: '' },
     });
 
     const onSubmit = (data: LeadFormData) => {
         createLead(data, {
-            onSuccess: () => {
-                reset();
-            },
+            onSuccess: () => reset(),
         });
     };
 
@@ -46,11 +45,22 @@ export function LeadCaptureForm({ buttonText }: LeadCaptureFormProps) {
             </div>
 
             <div className="space-y-2">
+                <Label htmlFor="phone">Telefone</Label>
+                <Input
+                    id="phone"
+                    placeholder="(11) 92222-1111"
+                    inputMode="tel"
+                    {...register('phone')}
+                />
+                {errors.phone && <p className="text-sm text-red-500">{errors.phone.message}</p>}
+            </div>
+
+            <div className="space-y-2">
                 <Label htmlFor="email">E-mail</Label>
                 <Input
                     id="email"
                     type="email"
-                    placeholder="seu@email.com"
+                    placeholder="voce@exemplo.com"
                     {...register('email')}
                 />
                 {errors.email && <p className="text-sm text-red-500">{errors.email.message}</p>}

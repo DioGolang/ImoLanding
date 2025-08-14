@@ -120,7 +120,7 @@ export const database = {
                     imageUrl: '/images/taj-residences/Opcao-1.jpg',
                 },
             ],
-            virtualTourUrl: '/tour-virtual/taj-residences-decorado',
+            virtualTourUrl: 'https://www.gyroexperience.com.br/homologacao/03_production/decorado_planik_taj_v3',
             cta: {
                 title: 'O extraordinário espera por você.',
                 subtitle:
@@ -170,22 +170,38 @@ export const database = {
                 "Infraestrutura para carregador de carro elétrico (1 por unidade)",
                 "Guarita blindada com projeto de segurança e clausura"
             ],
+// In `src/data/project.ts` inside the Taj Residences Ibirapuera project object:
             benefits: [
                 {
-                    icon: "Signature",
-                    title: "Arquitetura com Alma",
-                    description: "O pé-direito duplo de 5,48m não é apenas um detalhe, é uma declaração. Uma atmosfera de casa que amplia a luz, o ar e as suas perspectivas."
+                    icon: 'Signature',
+                    title: 'Uma Assinatura de Valor Inestimável',
+                    description:
+                        'Viva em uma obra de arte concebida pelo trio icônico da arquitetura brasileira: PSA Arquitetura, Chris Silveira e Benedito Abbud. Um legado que se valoriza com o tempo.',
                 },
                 {
-                    icon: "Customize",
-                    title: "Sua Identidade, Nosso Projeto",
-                    description: "Com o programa Planik One, seu apartamento se torna uma tela em branco para que você possa expressar sua personalidade em cada ambiente e acabamento."
+                    icon: 'Customize',
+                    title: 'Liberdade Criativa Absoluta',
+                    description:
+                        'Através do nosso Programa de Personalização, altere plantas, amplie ambientes e escolha acabamentos exclusivos para criar um lar que é um reflexo autêntico da sua identidade.',
                 },
                 {
-                    icon: "Resort",
-                    title: "Exclusividade e Natureza",
-                    description: "Em uma torre única com apenas 38 unidades, a privacidade é o maior luxo. Um refúgio cercado de verde, com lazer completo para renovar suas energias."
-                }
+                    icon: 'Resort',
+                    title: 'Lazer em Nível de Resort, no seu Endereço',
+                    description:
+                        'Mergulhe na piscina semiolímpica, jogue na quadra de beach tennis ou relaxe no spa. O melhor do lazer, a poucos passos da sua porta, para cancelar a assinatura do clube.',
+                },
+                {
+                    icon: 'Security',
+                    title: 'Proteção e Tranquilidade 24h',
+                    description:
+                        'Guarita blindada, controle de acesso especializado e gerador full-service asseguram autonomia e serenidade em qualquer cenário.',
+                },
+                {
+                    icon: 'Sustainability',
+                    title: 'Eficiência e Futuro Integrados',
+                    description:
+                        'Infraestrutura para carregador de carro elétrico por unidade e soluções que promovem eficiência, valorização e responsabilidade ambiental.',
+                },
             ],
             leisureHighlights: [
                 "Piscina coberta climatizada com raia de 20m",
@@ -212,7 +228,7 @@ export const database = {
                 '/images/nuv-moema/nuv-moema-academia.jpg',
                 '/images/nuv-moema/nuv-moema-academia-1.jpg',
             ],
-            bannerImage: '/images/nuv-moema/nuv-moema-living.jpg',
+            bannerImage: '/images/nuv-moema/nuv-moema-living-548.png',
             bannerVideo: '/images/nuv-moema/living.mp4',
             floorPlans: [
                 {
@@ -236,7 +252,7 @@ export const database = {
                     "imageUrl": "/images/nuv-moema/nuv-moema-cobertura-final-2.jpg"
                 }
             ],
-            virtualTourUrl: '/tour-virtual/taj-residences-decorado',
+            virtualTourUrl: 'https://www.gyroexperience.com.br/homologacao/03_production/decorado_planik_taj_v3',
             cta: {
                 title: "Viva um projeto onde cada detalhe tem alma.",
                 subtitle: "Receba mais informações com exclusividade e descubra uma nova perspectiva do luxo em Moema.",

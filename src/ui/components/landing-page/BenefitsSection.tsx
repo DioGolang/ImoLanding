@@ -4,8 +4,8 @@ import {
     CreativeIcon,
     EVChargerIcon,
     GeneratorIcon,
-    ResortIcon,
-    SignatureIcon,
+    ResortIcon, SecurityIcon,
+    SignatureIcon, SustainabilityIcon,
 } from '@/ui/components/shared/Icons';
 import { cn } from '@/infrastructure/lib/utils';
 
@@ -19,6 +19,8 @@ const iconMap = {
     Resort: <ResortIcon />,
     Generator: <GeneratorIcon />,
     EVCharger: <EVChargerIcon />,
+    Security: <SecurityIcon />,
+    Sustainability: <SustainabilityIcon />,
 } as const;
 
 type IconKey = keyof typeof iconMap;

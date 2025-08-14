@@ -6,6 +6,7 @@ import { Header } from '@/ui/components/layout/Header';
 import { Footer } from '@/ui/components/layout/Footer';
 
 import { HeroSection } from '@/ui/components/landing-page/HeroSection';
+import { ContactHighlightSection } from '@/ui/components/landing-page/ContactHighlightSection';
 import {IntroSection} from "@/ui/components/landing-page/IntroSection";
 import {BenefitsSection} from "@/ui/components/landing-page/BenefitsSection";
 import { CopySection } from '@/ui/components/landing-page/CopySection';
@@ -47,8 +48,10 @@ export default function RealEstateDevelopmentPage() {
                     subheadline={development.subheadline}
                     ctaText={development.cta.buttonText}
                     posterUrl={development.bannerImage}
-                    videoUrl={development.bannerVideo}
+                    //videoUrl={development.bannerVideo}
                  />
+
+               {/*<ContactHighlightSection />*/}
 
                 <IntroSection
                     title="Um lugar para pertencer."

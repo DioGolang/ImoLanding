@@ -28,3 +28,17 @@ export const VideoIcon = () => <IconWrapper><path d="m22 8-6 4 6 4V8Z" /><rect x
 export const ArrowRight = () => <IconWrapper><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></IconWrapper>;
 export const MenuIcon = () => <IconWrapper><line x1="3" y1="12" x2="21" y2="12" /><line x1="3" y1="6" x2="21" y2="6" /><line x1="3" y1="18" x2="21" y2="18" /></IconWrapper>;
 export const XIcon = () => <IconWrapper><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></IconWrapper>;
+export const SecurityIcon = () => (
+    <IconWrapper>
+        <path d="M12 22s8-4 8-10V7.2a2 2 0 0 0-1.2-1.8L12 3 5.2 5.4A2 2 0 0 0 4 7.2V12c0 6 8 10 8 10Z" />
+        <path d="m9.2 12 2.1 2.1 3.5-3.5" />
+    </IconWrapper>
+);
+
+export const SustainabilityIcon = () => (
+    <IconWrapper>
+        <path d="M12 22c4.4 0 8-3.6 8-8 0-3.2-2.7-6-6-6-1.6 0-3 .6-4.1 1.7A5.8 5.8 0 0 0 12 22Z" />
+        <path d="M2 12c0 2.9 1.6 5.5 4 6.9-.6-4.4 1.9-8.3 5.5-9.9a8 8 0 0 0-9.5 3Z" />
+        <path d="M12 12v4l2 2" />
+    </IconWrapper>
+);
