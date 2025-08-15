@@ -67,6 +67,13 @@ type ContactInfo = {
     whatsapp: string;   // Ex: "5511999999999" (somente números)
 };
 
+type Feature = {
+    title: string;
+    description: string;
+    icon: string;
+    category: 'common' | 'unit';
+};
+
 /**
  * @interface Project
  * @description Define a estrutura completa de dados para um empreendimento imobiliário.
@@ -92,5 +99,6 @@ export interface Project {
     cta: CallToAction;
     nearbyLocations: readonly NearbyLocation[];
     contact: ContactInfo;
+    features: readonly Feature[];
     virtualTourUrl?: string;
 }

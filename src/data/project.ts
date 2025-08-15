@@ -180,6 +180,27 @@ export const database = {
                 phone: "(11) 3210-1234",
                 whatsapp: "5511912345678",
             },
+            features: [
+                // Áreas Comuns
+                { category: 'common', icon: 'Wifi', title: 'Infraestrutura para Wi-fi', description: 'entregue nas áreas comuns' },
+                { category: 'common', icon: 'Waves', title: 'Piscinas climatizadas', description: 'coberta e descoberta' },
+                { category: 'common', icon: 'Lightbulb', title: 'Uso de lâmpadas LED', description: 'nas áreas comuns' },
+                { category: 'common', icon: 'BatteryCharging', title: 'Gerador full', description: 'para apartamentos e áreas comuns' },
+                { category: 'common', icon: 'Thermometer', title: 'Ar-condicionado', description: 'entregue nos principais ambientes' },
+                { category: 'common', icon: 'Droplets', title: 'Captação e reaproveitamento de águas', description: 'pluviais para irrigação dos jardins' },
+                { category: 'common', icon: 'ParkingCircle', title: 'Vagas de veículos', description: 'demarcadas' },
+                { category: 'common', icon: 'Box', title: 'Espaço delivery', description: 'com refrigerador' },
+
+                // Unidades
+                { category: 'unit', icon: 'MoveVertical', title: 'Pé-direito duplo', description: 'no terraço e estar' },
+                { category: 'unit', icon: 'Sofa', title: 'Hall social', description: 'privativo' },
+                { category: 'unit', icon: 'Archive', title: 'Depósito exclusivo', description: 'nos subsolos' },
+                { category: 'unit', icon: 'Trash2', title: 'Ponto para triturador', description: 'de alimentos na cozinha' },
+                { category: 'unit', icon: 'Wind', title: 'Ventilação natural', description: 'em todos os banheiros das suítes' },
+                { category: 'unit', icon: 'Elevator', title: 'Elevadores sociais', description: 'com controle de acesso' },
+                { category: 'unit', icon: 'CookingPot', title: 'Ponto para coifa', description: 'na cozinha' },
+                { category: 'unit', icon: 'Flame', title: 'Infraestrutura para churrasqueira', description: 'a carvão no terraço' }
+            ],
         },
         {
             slug: "nuv-moema",
@@ -415,6 +436,27 @@ export const database = {
                 phone: "(11) 3210-1234",
                 whatsapp: "5511912345678",
             },
+            features: [
+                // Áreas Comuns
+                { category: 'common', icon: 'Wifi', title: 'Infraestrutura para Wi-fi', description: 'entregue nas áreas comuns' },
+                { category: 'common', icon: 'Waves', title: 'Piscinas climatizadas', description: 'coberta e descoberta' },
+                { category: 'common', icon: 'Lightbulb', title: 'Uso de lâmpadas LED', description: 'nas áreas comuns' },
+                { category: 'common', icon: 'BatteryCharging', title: 'Gerador full', description: 'para apartamentos e áreas comuns' },
+                { category: 'common', icon: 'Thermometer', title: 'Ar-condicionado', description: 'entregue nos principais ambientes' },
+                { category: 'common', icon: 'Droplets', title: 'Captação e reaproveitamento de águas', description: 'pluviais para irrigação dos jardins' },
+                { category: 'common', icon: 'ParkingCircle', title: 'Vagas de veículos', description: 'demarcadas' },
+                { category: 'common', icon: 'Box', title: 'Espaço delivery', description: 'com refrigerador' },
+
+                // Unidades
+                { category: 'unit', icon: 'MoveVertical', title: 'Pé-direito duplo', description: 'no terraço e estar' },
+                { category: 'unit', icon: 'Sofa', title: 'Hall social', description: 'privativo' },
+                { category: 'unit', icon: 'Archive', title: 'Depósito exclusivo', description: 'nos subsolos' },
+                { category: 'unit', icon: 'Trash2', title: 'Ponto para triturador', description: 'de alimentos na cozinha' },
+                { category: 'unit', icon: 'Wind', title: 'Ventilação natural', description: 'em todos os banheiros das suítes' },
+                { category: 'unit', icon: 'Elevator', title: 'Elevadores sociais', description: 'com controle de acesso' },
+                { category: 'unit', icon: 'CookingPot', title: 'Ponto para coifa', description: 'na cozinha' },
+                { category: 'unit', icon: 'Flame', title: 'Infraestrutura para churrasqueira', description: 'a carvão no terraço' }
+            ],
         },
     ] as const, // <-- TypeScript trick for readonly data
 };

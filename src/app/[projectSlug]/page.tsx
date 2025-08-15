@@ -21,6 +21,7 @@ import {ProblemSolutionSection} from "@/ui/components/landing-page/ProblemSoluti
 import {PlanikOneSection} from "@/ui/components/landing-page/PlanikOneSection";
 import {NearbySection} from "@/ui/components/landing-page/NearbySection";
 import {KeyDetailsSection} from "@/ui/components/landing-page/KeyDetailsSection";
+import {FeaturesSection} from "@/ui/components/landing-page/FeaturesSection";
 
 
 export default function RealEstateDevelopmentPage() {
@@ -101,6 +102,8 @@ export default function RealEstateDevelopmentPage() {
                 <GallerySection images={development.images} projectName={development.name} />
 
                 <FloorPlanSection floorPlans={development.floorPlans} />
+
+                <FeaturesSection features={development.features} />
 
                 <PlanikOneSection />
 
