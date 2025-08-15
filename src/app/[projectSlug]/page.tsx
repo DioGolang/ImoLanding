@@ -6,7 +6,6 @@ import { Header } from '@/ui/components/layout/Header';
 import { Footer } from '@/ui/components/layout/Footer';
 
 import { HeroSection } from '@/ui/components/landing-page/HeroSection';
-import { ContactHighlightSection } from '@/ui/components/landing-page/ContactHighlightSection';
 import {IntroSection} from "@/ui/components/landing-page/IntroSection";
 import {BenefitsSection} from "@/ui/components/landing-page/BenefitsSection";
 import { CopySection } from '@/ui/components/landing-page/CopySection';
@@ -22,7 +21,6 @@ import {PlanikOneSection} from "@/ui/components/landing-page/PlanikOneSection";
 import {NearbySection} from "@/ui/components/landing-page/NearbySection";
 import {KeyDetailsSection} from "@/ui/components/landing-page/KeyDetailsSection";
 import {FeaturesSection} from "@/ui/components/landing-page/FeaturesSection";
-
 
 export default function RealEstateDevelopmentPage() {
     const params = useParams();
@@ -43,7 +41,6 @@ export default function RealEstateDevelopmentPage() {
         { href: '#contato', label: 'Contato' },
     ];
 
-    const experienceImageUrl = [...development.images].find(img => img.includes('fachada')) || development.images[8];
     return (
         <>
             <Header
@@ -95,8 +92,10 @@ export default function RealEstateDevelopmentPage() {
 
                 <ExperiencesSection
                     copy={development.copy.leisure}
-                    imageUrl={experienceImageUrl}
+                    imageUrl={development.featureImage}
                     projectName={development.name}
+                    eyebrow="Lazer & Bem-Estar"
+                    cta={{ label: "Ver galeria completa", href: "#galeria" }}
                 />
 
                 <GallerySection images={development.images} projectName={development.name} />

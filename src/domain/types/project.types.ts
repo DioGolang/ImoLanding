@@ -83,6 +83,7 @@ export interface Project {
     slug: string; // Identificador único para a URL, ex: "taj-residences-ibirapuera"
     name: string;
     unitDetails: UnitDetailsByType;
+    featureImage: string;
     colors: ColorScheme;
     location: LocationInfo;
     headline: string;

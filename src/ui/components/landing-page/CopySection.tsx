@@ -1,6 +1,8 @@
 'use client';
 
-import React, { useEffect, useRef, useState, useMemo } from 'react';
+import React, { useRef, useMemo } from 'react';
+import { motion, useInView, Variants } from 'framer-motion';
+import { cn } from '@/infrastructure/lib/utils';
 
 type HeadingLevel = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 
@@ -26,9 +28,7 @@ export interface CopySectionProps {
     className?: string;
     titleClassName?: string;
     paragraphClassName?: string;
-    disableAnimation?: boolean;
     children?: React.ReactNode;
-    onVisibleOnce?: () => void;
 }
 
 const maxWidthMap: Record<NonNullable<CopySectionProps['maxWidth']>, string> = {
@@ -53,124 +53,81 @@ export function CopySection({
                                 className = '',
                                 titleClassName = '',
                                 paragraphClassName = '',
-                                disableAnimation,
                                 children,
-                                onVisibleOnce
                             }: CopySectionProps) {
-    const rootRef = useRef<HTMLElement | null>(null);
-    const [visible, setVisible] = useState(disableAnimation || false);
-    const tracked = useRef(false);
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true, amount: 0.3 });
 
-    useEffect(() => {
-        if (disableAnimation) return;
-        const el = rootRef.current;
-        if (!el) return;
-        const io = new IntersectionObserver(
-            entries => {
-                for (const e of entries) {
-                    if (e.isIntersecting) {
-                        setVisible(true);
-                        if (!tracked.current) {
-                            onVisibleOnce?.();
-                            tracked.current = true;
-                        }
-                        io.disconnect();
-                        break;
-                    }
-                }
-            },
-            { threshold: 0.2 }
-        );
-        io.observe(el);
-        return () => io.disconnect();
-    }, [disableAnimation, onVisibleOnce]);
-
-    const highlightSet = useMemo(() => {
-        const list = Array.isArray(highlightWords) ? highlightWords : [];
-        return new Set(list.map(w => w.trim()).filter(Boolean));
-    }, [highlightWords]);
+    const highlightSet = useMemo(() => new Set(highlightWords), [highlightWords]);
 
     const renderHighlighted = (raw: string) => {
-        if (!highlightSet.size) return raw;
+        if (highlightSet.size === 0) return raw;
         return raw.split(/(\s+)/).map((chunk, i) => {
             const key = `${chunk}-${i}`;
             const plain = chunk.replace(/\W/g, '');
             if (highlightSet.has(plain)) {
                 return (
-                    <span key={key} className="relative inline-block text-brand-primary">
-            <span
-                className="bg-brand-gold/30 dark:bg-brand-gold/20 absolute inset-x-0 bottom-0 h-2 rounded-sm"
-                aria-hidden="true"
-            />
-            <span className="relative">{chunk}</span>
-          </span>
+                    <span key={key} className="relative inline-block text-brand-primary dark:text-brand-gold">
+                        <span className="relative z-10">{chunk}</span>
+                    </span>
                 );
             }
             return <React.Fragment key={key}>{chunk}</React.Fragment>;
         });
     };
 
-    const headingId = `${id}-heading`;
+    const containerVariants: Variants = {
+        hidden: { opacity: 0 },
+        visible: { opacity: 1, transition: { staggerChildren: 0.2 } }
+    };
+
+    const itemVariants: Variants = {
+        hidden: { opacity: 0, y: 20 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: 'easeOut' } }
+    };
 
     return (
-        <section
+        <motion.section
+            ref={ref}
             id={id}
-            ref={rootRef}
-            className={[
-                'py-16 md:py-24 bg-white text-gray-800',
-                'transition-opacity duration-700 ease-out motion-reduce:transition-none',
-                visible ? 'opacity-100' : 'opacity-0',
-                className
-            ].join(' ')}
-            aria-labelledby={headingId}
+            className={cn('py-16 md:py-24 bg-white dark:bg-black', className)}
+            aria-labelledby={`${id}-heading`}
+            variants={containerVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
         >
             <div className="container mx-auto px-4">
-                <div
-                    className={[
-                        'mx-auto',
-                        maxWidthMap[maxWidth],
-                        align === 'center' ? 'text-center' : 'text-left'
-                    ].join(' ')}
-                >
+                <div className={cn('mx-auto', maxWidthMap[maxWidth], align === 'center' ? 'text-center' : 'text-left')}>
                     {eyebrow && (
-                        <p
-                            className="text-sm font-medium tracking-wider uppercase text-brand-primary mb-4"
-                            data-testid="copy-eyebrow"
+                        <motion.p
+                            variants={itemVariants}
+                            className="text-sm font-semibold tracking-wider uppercase text-brand-gold mb-4"
                         >
                             {eyebrow}
-                        </p>
+                        </motion.p>
                     )}
 
-                    <DynamicHeading
-                        as={as}
-                        id={headingId}
-                        className={[
-                            'font-bold font-serif tracking-tight',
-                            'text-3xl md:text-4xl',
-                            'leading-tight',
-                            titleClassName
-                        ].join(' ')}
-                        style={{ color: 'var(--color-text-primary)' }}
-                    >
-                        {renderHighlighted(title)}
-                    </DynamicHeading>
+                    <motion.div variants={itemVariants}>
+                        <DynamicHeading
+                            as={as}
+                            id={`${id}-heading`}
+                            className={cn('font-bold font-serif tracking-tight text-3xl md:text-4xl leading-tight text-brand-primary dark:text-neutral-100', titleClassName)}
+                        >
+                            {renderHighlighted(title)}
+                        </DynamicHeading>
+                    </motion.div>
 
                     {(children || text) && (
-                        <div
-                            className={[
-                                'mt-6 text-lg leading-relaxed',
-                                'text-gray-600',
-                                paragraphClassName
-                            ].join(' ')}
-                            style={{ color: 'var(--color-text-secondary)' }}
-                            data-testid="copy-body"
+                        <motion.div
+                            variants={itemVariants}
+                            className={cn('mt-6 text-lg leading-relaxed text-gray-600 dark:text-gray-300', paragraphClassName)}
                         >
                             {children ?? text}
-                        </div>
+                        </motion.div>
                     )}
 
                     {ctaLabel && ctaHref && (
-                        <div className="mt-10">
+                        <motion.div variants={itemVariants} className="mt-10">
                             <a
                                 href={ctaHref}
                                 className="inline-flex items-center gap-2 rounded-lg bg-brand-primary px-6 py-3 text-white font-medium shadow hover:bg-brand-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary/40 transition"
@@ -178,10 +135,10 @@ export function CopySection({
                                 {ctaLabel}
                                 <span aria-hidden="true">→</span>
                             </a>
-                        </div>
+                        </motion.div>
                     )}
                 </div>
             </div>
-        </section>
+        </motion.section>
     );
 }

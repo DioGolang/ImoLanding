@@ -109,6 +109,7 @@ export const database = {
                 '/images/taj-residences/tag-13.jpg',
             ],
             bannerImage: '/images/taj-residences/Padrao-4-Suites.jpg',
+            featureImage: '/images/nuv-moema/nuv-moema-piscina.jpg',
             bannerVideo: '/images/nuv-moema/living.jpg',
             floorPlans: [
                 {
@@ -315,6 +316,7 @@ export const database = {
                 '/images/nuv-moema/nuv-moema-academia-1.jpg',
             ],
             bannerImage: '/images/nuv-moema/nuv-moema-living-548.png',
+            featureImage: '/images/nuv-moema/nuv-moema-piscina-coberta.jpg',
             bannerVideo: '/images/nuv-moema/living.mp4',
             floorPlans: [
                 {
