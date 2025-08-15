@@ -40,6 +40,18 @@ export const database = {
                 parkingSpots: '3 a 5 vagas demarcadas',
                 extra: 'Depósito privativo para todas as unidades',
             },
+            unitDetails: {
+                tipo: [
+                    { icon: 'Ruler', value: "191m²", label: "Área Privativa" },
+                    { icon: 'BedDouble', value: "3 Suítes", label: "Dormitórios" },
+                    { icon: 'Car', value: "3 Vagas", label: "Demarcadas" },
+                ],
+                cobertura: [
+                    { icon: 'Ruler', value: "465m²", label: "Área Privativa" },
+                    { icon: 'BedDouble', value: "4 Suítes", label: "Dormitórios" },
+                    { icon: 'Car', value: "5 Vagas", label: "Demarcadas" },
+                ]
+            },
             mainFeatures: [
                 'Hall social privativo',
                 'Pé-direito elevado de até 2,94m',
@@ -127,6 +139,47 @@ export const database = {
                     'As unidades são limitadas e a exclusividade é a essência deste projeto.',
                 buttonText: 'Agende sua visita privativa',
             },
+            nearbyLocations: [
+                {
+                    name: "Parque Ibirapuera",
+                    time: "6 min. de distância",
+                    imageUrl: "/images/nuv-moema/nearby/parque-ibirapuera.jpg" // Adicione as imagens nesta pasta
+                },
+                {
+                    name: "Escola Mobile",
+                    time: "7 min. de distância",
+                    imageUrl: "/images/nuv-moema/nearby/escola-mobile.jpg"
+                },
+                {
+                    name: "Shopping Ibirapuera",
+                    time: "4 min. de distância",
+                    imageUrl: "/images/nuv-moema/nearby/shopping-ibirapuera.jpg"
+                },
+                {
+                    name: "Insper",
+                    time: "9 min. de distância",
+                    imageUrl: "/images/nuv-moema/nearby/insper.jpg"
+                },
+                {
+                    name: "Huto Restaurante",
+                    time: "1 min. de distância",
+                    imageUrl: "/images/nuv-moema/nearby/huto.jpg"
+                },
+                {
+                    name: "1900 Pizzería",
+                    time: "1 min. de distância",
+                    imageUrl: "/images/nuv-moema/nearby/shopping-ibirapuera.jpg"
+                },
+                {
+                    name: "Aeroporto de Congonhas",
+                    time: "4 min. de distância",
+                    imageUrl: "/images/nuv-moema/nearby/aeroporto-congonhas.jpg"
+                },
+            ],
+            contact: {
+                phone: "(11) 3210-1234",
+                whatsapp: "5511912345678",
+            },
         },
         {
             slug: "nuv-moema",
@@ -159,6 +212,18 @@ export const database = {
                 ],
                 parkingSpots: "3 a 4 vagas demarcadas",
                 extra: "Depósito exclusivo para todas as unidades"
+            },
+            unitDetails: {
+                tipo: [
+                    { icon: 'Ruler', value: "207m²", label: "Área Privativa" },
+                    { icon: 'BedDouble', value: "4 Suítes", label: "Dormitórios" },
+                    { icon: 'Car', value: "3 Vagas", label: "Demarcadas" },
+                ],
+                cobertura: [
+                    { icon: 'Ruler', value: "447m²", label: "Área Privativa" },
+                    { icon: 'BedDouble', value: "4 Suítes", label: "Dormitórios" },
+                    { icon: 'Car', value: "4 Vagas", label: "Demarcadas" },
+                ]
             },
             mainFeatures: [
                 "Pé-direito duplo de 5,48m no living e terraço",
@@ -257,7 +322,99 @@ export const database = {
                 title: "Viva um projeto onde cada detalhe tem alma.",
                 subtitle: "Receba mais informações com exclusividade e descubra uma nova perspectiva do luxo em Moema.",
                 buttonText: "Solicitar Contato"
-            }
+            },
+            nearbyLocations: [
+                {
+                    name: "Av. Moema",
+                    time: "1 min. de distância",
+                    imageUrl: "/images/nuv-moema/nearby/AV-MOEMA-4.jpg" // Adicione as imagens nesta pasta
+                },
+                {
+                    name: "Av. Ibirapuera",
+                    time: "4 min. de distância",
+                    imageUrl: "/images/nuv-moema/nearby/AV-IBIRAPUERA.jpg" // Adicione as imagens nesta pasta
+                },
+                {
+                    name: "Parque Ibirapuera",
+                    time: "6 min. de distância",
+                    imageUrl: "/images/nuv-moema/nearby/parque-ibirapuera.png" // Adicione as imagens nesta pasta
+                },
+                {
+                    name: "República do Líbano",
+                    time: "4 min. de distância",
+                    imageUrl: "/images/nuv-moema/nearby/republica-libano.jpg" // Adicione as imagens nesta pasta
+                },
+                {
+                    name: "Av. Rep do Líbano",
+                    time: "3 min. de distância",
+                    imageUrl: "/images/nuv-moema/nearby/av-rep-libano.jpg" // Adicione as imagens nesta pasta
+                },
+                {
+                    name: "Av. Indianópolis",
+                    time: "1 min. de distância",
+                    imageUrl: "/images/nuv-moema/nearby/AV-INDIANAPOLIS-2.jpg"
+                },
+                {
+                    name: "Clube Monte Lábano",
+                    time: "4 min. de distância",
+                    imageUrl: "/images/nuv-moema/nearby/CLUBE-MONTE-LIBANO-5.jpg" // Adicione as imagens nesta pasta
+                },
+                {
+                    name: "AV. dos Bandeirantes",
+                    time: "4 min. de distância",
+                    imageUrl: "/images/nuv-moema/nearby/AV-DOS-BANDEIRANTES.jpg"
+                },
+
+                {
+                    name: "Escola Mobile",
+                    time: "7 min. de distância",
+                    imageUrl: "/images/nuv-moema/nearby/escola-mobile.jpg"
+                },
+                {
+                    name: "Metrô Moema",
+                    time: "7 min. de distância",
+                    imageUrl: "/images/nuv-moema/nearby/METRO-MOEMA-4.jpg"
+                },
+                {
+                    name: "Shopping Ibirapuera",
+                    time: "4 min. de distância",
+                    imageUrl: "/images/nuv-moema/nearby/shopping-ibirapuera.jpg"
+                },
+                {
+                    name: "Insper",
+                    time: "9 min. de distância",
+                    imageUrl: "/images/nuv-moema/nearby/insper.jpg"
+                },
+                {
+                    name: "Espm",
+                    time: "9 min. de distância",
+                    imageUrl: "/images/nuv-moema/nearby/espm.jpg"
+                },
+                {
+                    name: "Clube Armênio",
+                    time: "9 min. de distância",
+                    imageUrl: "/images/nuv-moema/nearby/CLUBE-ARMENIO-2.jpg"
+                },
+                {
+                    name: "Huto Restaurante",
+                    time: "1 min. de distância",
+                    imageUrl: "/images/nuv-moema/nearby/huto.jpg"
+                },
+                {
+                    name: "1900 Pizzería",
+                    time: "1 min. de distância",
+                    imageUrl: "/images/nuv-moema/nearby/shopping-ibirapuera.jpg"
+                },
+                {
+                    name: "Aeroporto de Congonhas",
+                    time: "4 min. de distância",
+                    imageUrl: "/images/nuv-moema/nearby/AEROPORTO-DE-CONGONHAS-4-scaled.jpg"
+                },
+            ],
+            contact: {
+                phone: "(11) 3210-1234",
+                whatsapp: "5511912345678",
+            },
         },
     ] as const, // <-- TypeScript trick for readonly data
 };

@@ -5,6 +5,17 @@ type ColorScheme = {
     textSecondary: string;
 };
 
+type UnitDetailItem = {
+    icon: 'Ruler' | 'BedDouble' | 'Car' | 'Expand';
+    value: string;
+    label: string;
+};
+
+type UnitDetailsByType = {
+    tipo: readonly UnitDetailItem[];
+    cobertura: readonly UnitDetailItem[];
+};
+
 type LocationInfo = {
     address: string;
     neighborhood: string;
@@ -44,6 +55,18 @@ type FloorPlan = {
     imageUrl: string;
 };
 
+type NearbyLocation = {
+    name: string;
+    time: string;
+    imageUrl: string;
+}
+
+
+type ContactInfo = {
+    phone: string;      // Ex: "(11) 99999-9999"
+    whatsapp: string;   // Ex: "5511999999999" (somente números)
+};
+
 /**
  * @interface Project
  * @description Define a estrutura completa de dados para um empreendimento imobiliário.
@@ -52,6 +75,7 @@ type FloorPlan = {
 export interface Project {
     slug: string; // Identificador único para a URL, ex: "taj-residences-ibirapuera"
     name: string;
+    unitDetails: UnitDetailsByType;
     colors: ColorScheme;
     location: LocationInfo;
     headline: string;
@@ -65,6 +89,8 @@ export interface Project {
     bannerImage: string
     bannerVideo: string
     floorPlans: FloorPlan[];
-    virtualTourUrl?: string;
     cta: CallToAction;
+    nearbyLocations: readonly NearbyLocation[];
+    contact: ContactInfo;
+    virtualTourUrl?: string;
 }

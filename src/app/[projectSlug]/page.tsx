@@ -17,6 +17,10 @@ import {LeadCaptureSection} from "@/ui/components/landing-page/LeadCaptureSectio
 import {TourSection} from "@/ui/components/landing-page/TourSection";
 import {FloorPlanSection} from "@/ui/components/landing-page/FloorPlanSection";
 import { StickyInquiryBar } from '@/ui/components/landing-page/StickyInquiryBar';
+import {ProblemSolutionSection} from "@/ui/components/landing-page/ProblemSolutionSection";
+import {PlanikOneSection} from "@/ui/components/landing-page/PlanikOneSection";
+import {NearbySection} from "@/ui/components/landing-page/NearbySection";
+import {KeyDetailsSection} from "@/ui/components/landing-page/KeyDetailsSection";
 
 
 export default function RealEstateDevelopmentPage() {
@@ -41,8 +45,13 @@ export default function RealEstateDevelopmentPage() {
     const experienceImageUrl = [...development.images].find(img => img.includes('fachada')) || development.images[8];
     return (
         <>
-            <Header projectName={development.name} navLinks={navLinks} />
+            <Header
+                projectName={development.name}
+                navLinks={navLinks}
+                ctaText={development.cta.buttonText}
+            />
             <main>
+                {/* 1. ATENÇÃO */}
                 <HeroSection
                     headline={development.headline}
                     subheadline={development.subheadline}
@@ -51,12 +60,19 @@ export default function RealEstateDevelopmentPage() {
                     //videoUrl={development.bannerVideo}
                  />
 
+                <KeyDetailsSection unitDetails={development.unitDetails} />
+
+                {/* 2. INTERESSE */}
+                <ProblemSolutionSection />
+
                {/*<ContactHighlightSection />*/}
 
                 <IntroSection
                     title="Um lugar para pertencer."
                     text={development.copy.opening}
                 />
+
+                {/* 3. DESEJO */}
                 <BenefitsSection benefits={development.benefits} />
 
                 <CopySection
@@ -74,6 +90,8 @@ export default function RealEstateDevelopmentPage() {
                     copy={development.copy.location}
                 />
 
+                <NearbySection nearbyLocations={development.nearbyLocations} />
+
                 <ExperiencesSection
                     copy={development.copy.leisure}
                     imageUrl={experienceImageUrl}
@@ -84,13 +102,15 @@ export default function RealEstateDevelopmentPage() {
 
                 <FloorPlanSection floorPlans={development.floorPlans} />
 
+                <PlanikOneSection />
+
                 <TourSection
                     tourUrl={development.virtualTourUrl}
                     previewImageUrl={development.images[5]}
                 />
 
-                <LeadCaptureSection cta={development.cta} />
-                <StickyInquiryBar whatsappLink="https://wa.me/5548999999999" phone="(48) 99999-9999" />
+                <LeadCaptureSection />
+                <StickyInquiryBar cta={development.cta} contact={development.contact} />
 
             </main>
             <Footer projectName={development.name} address={development.location.address} />
